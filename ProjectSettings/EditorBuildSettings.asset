@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameplayScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/QuitScene.unity
-    guid: 0011c7ce166ebc74ca11d0fcc4faa472
+    path: Assets/Scenes/Game Over.unity
+    guid: 63ece9fed2ac8e440b19af813c3fd9c3
+  - enabled: 1
+    path: Assets/Scenes/YouGotIt.unity
+    guid: 28e66bd459f04da49bbd43a602b06aac
   m_configObjects: {}
