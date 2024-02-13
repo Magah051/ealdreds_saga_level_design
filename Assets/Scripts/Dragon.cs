@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEye : MonoBehaviour
+public class Dragon : MonoBehaviour
 {
     public float flightSpeed = 2f;
     public float waypointReachedDistance = 0.1f;
     public DetectionZone biteDetectionZone;
     public Collider2D deathCollider;
     public List<Transform> waypoints;
-    public GameObject audioBite;
+    public GameObject fireball;
     public float activationInterval = 0.4f;
 
     Animator animator;
@@ -50,7 +50,8 @@ public class FlyingEye : MonoBehaviour
     private void Start()
     {
         nextWaypoint = waypoints[waypointNum];
-        InvokeRepeating("ActivateDeactivateAudioBite", 0f, activationInterval);
+        InvokeRepeating("ActivateDeactivateFireball", 0f, activationInterval);
+
     }
 
     // Update is called once per frame
@@ -59,15 +60,15 @@ public class FlyingEye : MonoBehaviour
         HasTarget = biteDetectionZone.detectedColliders.Count > 0;
     }
 
-    void ActivateDeactivateAudioBite()
+    void ActivateDeactivateFireball()
     {
         if (_hasTarget)
         {
-            audioBite.SetActive(!audioBite.activeSelf);
+            fireball.SetActive(!fireball.activeSelf);
         }
         else
         {
-            audioBite.SetActive(false);
+            fireball.SetActive(false);
         }
     }
 
