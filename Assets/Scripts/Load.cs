@@ -7,7 +7,7 @@ public class Load : MonoBehaviour
 {
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
     }
 }

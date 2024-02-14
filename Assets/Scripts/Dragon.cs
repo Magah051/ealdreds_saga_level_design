@@ -12,6 +12,7 @@ public class Dragon : MonoBehaviour
     public List<Transform> waypoints;
     public GameObject fireball;
     public float activationInterval = 0.4f;
+    public bool playerIsHere;
 
     Animator animator;
     Rigidbody2D rb;
@@ -47,8 +48,10 @@ public class Dragon : MonoBehaviour
         damageable = GetComponent<Damageable>();
     }
 
+
     private void Start()
     {
+        playerIsHere = false;
         nextWaypoint = waypoints[waypointNum];
         InvokeRepeating("ActivateDeactivateFireball", 0f, activationInterval);
 
@@ -58,6 +61,7 @@ public class Dragon : MonoBehaviour
     void Update()
     {
         HasTarget = biteDetectionZone.detectedColliders.Count > 0;
+        playerIsHere = BarreiraMaster.playerInside;
     }
 
     void ActivateDeactivateFireball()
@@ -78,7 +82,9 @@ public class Dragon : MonoBehaviour
         {
             if(CanMove)
             {
-                Flight();
+                Debug.Log(playerIsHere);
+                if (playerIsHere)
+                    Flight();
             } 
             else
             {
