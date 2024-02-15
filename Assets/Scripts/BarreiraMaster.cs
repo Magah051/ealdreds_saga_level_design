@@ -6,6 +6,7 @@ public class BarreiraMaster : MonoBehaviour
     public GameObject musicObject;
     public GameObject musicAttackObject;
     public GameObject dragonFlyAudioObject;
+    public GameObject dragonCanvas;
 
     public static bool playerInside = false;
     private BoxCollider2D boxCollider;
@@ -21,7 +22,7 @@ public class BarreiraMaster : MonoBehaviour
 
     void Start()
     {
-        playerInside = true; // Mudança aqui para que o comportamento inicial seja como solicitado
+        playerInside = false;
     }
 
     // Chamado quando algo entra na área de colisão
@@ -31,24 +32,11 @@ public class BarreiraMaster : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-
-            if (musicObject != null)
-            {
-                musicObject.GetComponent<AudioSource>().volume = 0.0f;
-            }
-
-            if (musicAttackObject != null)
-            {
-                musicAttackObject.GetComponent<AudioSource>().volume = 0.3f;
-            }
-
-            if (dragonFlyAudioObject != null)
-            {
-                dragonFlyAudioObject.GetComponent<AudioSource>().volume = 0.7f;
-            }
+            dragonCanvas.SetActive(true);
+            SetNewsVolumes();
 
             // Chama a função para desativar o trigger após 3 segundos
-            Invoke("DisableTriggerAfterDelay", 3f);
+            Invoke("DisableTriggerAfterDelay", 1f);
         }
     }
 
@@ -74,6 +62,24 @@ public class BarreiraMaster : MonoBehaviour
         if (dragonFlyAudioObject != null)
         {
             dragonFlyAudioObject.GetComponent<AudioSource>().volume = 0.0f;
+        }
+    }
+
+    private void SetNewsVolumes()
+    {
+        if (musicObject != null)
+        {
+            musicObject.GetComponent<AudioSource>().volume = 0.0f;
+        }
+
+        if (musicAttackObject != null)
+        {
+            musicAttackObject.GetComponent<AudioSource>().volume = 0.3f;
+        }
+
+        if (dragonFlyAudioObject != null)
+        {
+            dragonFlyAudioObject.GetComponent<AudioSource>().volume = 0.7f;
         }
     }
 }

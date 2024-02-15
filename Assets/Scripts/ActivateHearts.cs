@@ -3,7 +3,7 @@ using UnityEngine;
 public class ActivateHearts : MonoBehaviour
 {
     public GameObject hearts; // Referência ao GameObject Hearts
-    public float activationInterval = 30f; // Intervalo de ativação em segundos
+    public float activationInterval = 20f; // Intervalo de ativação em segundos
     private int heartIndex = 1; // Índice do coração atual
 
     // Método chamado quando o script é inicializado

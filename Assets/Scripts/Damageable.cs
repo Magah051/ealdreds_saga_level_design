@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Damageable : MonoBehaviour
 {
@@ -107,6 +108,20 @@ public class Damageable : MonoBehaviour
 
             timeSinceHit += Time.deltaTime;
         }
+
+        // Verifica se o GameObject tem a tag desejada
+        if (gameObject.CompareTag("dragon"))
+        {
+            if (!IsAlive)
+            {
+                Invoke("LoadSceneDeath", 1f);
+            }
+        }
+    }
+
+    private void LoadSceneDeath()
+    {
+        SceneManager.LoadScene(2);
     }
 
     // Returns whether the damageable took damage or not
