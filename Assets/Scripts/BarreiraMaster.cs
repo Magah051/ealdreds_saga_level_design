@@ -7,6 +7,7 @@ public class BarreiraMaster : MonoBehaviour
     public GameObject musicAttackObject;
     public GameObject dragonFlyAudioObject;
     public GameObject dragonCanvas;
+    public GameObject hearts;
 
     public static bool playerInside = false;
     private BoxCollider2D boxCollider;
@@ -23,6 +24,16 @@ public class BarreiraMaster : MonoBehaviour
     void Start()
     {
         playerInside = false;
+        // Iniciar música e efeitos sonoros em stop
+        if (musicAttackObject != null)
+        {
+            musicAttackObject.GetComponent<AudioSource>().Stop();
+        }
+
+        if (dragonFlyAudioObject != null)
+        {
+            dragonFlyAudioObject.GetComponent<AudioSource>().Stop();
+        }
     }
 
     // Chamado quando algo entra na área de colisão
@@ -33,6 +44,7 @@ public class BarreiraMaster : MonoBehaviour
         {
             playerInside = true;
             dragonCanvas.SetActive(true);
+            hearts.SetActive(true);
             SetNewsVolumes();
 
             // Chama a função para desativar o trigger após 3 segundos
@@ -54,15 +66,6 @@ public class BarreiraMaster : MonoBehaviour
             musicObject.GetComponent<AudioSource>().volume = 0.4f;
         }
 
-        if (musicAttackObject != null)
-        {
-            musicAttackObject.GetComponent<AudioSource>().volume = 0.0f;
-        }
-
-        if (dragonFlyAudioObject != null)
-        {
-            dragonFlyAudioObject.GetComponent<AudioSource>().volume = 0.0f;
-        }
     }
 
     private void SetNewsVolumes()
@@ -75,11 +78,13 @@ public class BarreiraMaster : MonoBehaviour
         if (musicAttackObject != null)
         {
             musicAttackObject.GetComponent<AudioSource>().volume = 0.3f;
+            musicAttackObject.GetComponent<AudioSource>().Play(); // Inicia música de ataque
         }
 
         if (dragonFlyAudioObject != null)
         {
             dragonFlyAudioObject.GetComponent<AudioSource>().volume = 0.7f;
+            dragonFlyAudioObject.GetComponent<AudioSource>().Play(); // Inicia efeito sonoro de voo do dragão
         }
     }
 }

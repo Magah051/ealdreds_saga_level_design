@@ -4156,7 +4156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460025795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 291.57, y: 1.63, z: -10}
+  m_LocalPosition: {x: -16.71, y: 5.879, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4485,7 +4485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 291.57, y: 1.63, z: -10}
+  m_LocalPosition: {x: -16.71, y: 5.879, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59432,6 +59432,7 @@ MonoBehaviour:
   musicAttackObject: {fileID: 1152481986}
   dragonFlyAudioObject: {fileID: 931290548}
   dragonCanvas: {fileID: 202786943}
+  hearts: {fileID: 1817657755}
 --- !u!61 &1395124131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90565,7 +90566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1817657756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97215,11 +97216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6363893081619587235, guid: 46bd12593bb5b2841b94a0e4d04e89e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 291.57
+      value: -16.71
       objectReference: {fileID: 0}
     - target: {fileID: 6363893081619587235, guid: 46bd12593bb5b2841b94a0e4d04e89e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.63
+      value: 5.879
       objectReference: {fileID: 0}
     - target: {fileID: 6363893081619587235, guid: 46bd12593bb5b2841b94a0e4d04e89e1, type: 3}
       propertyPath: m_LocalPosition.z
