@@ -7,6 +7,12 @@ public class DieCollider : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(1);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(1);
+        }
+        
     }
+
+
 }
